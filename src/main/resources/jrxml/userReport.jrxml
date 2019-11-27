@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="userReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ddf6b7d0-78fa-44b9-aa99-3ae0ba2d712e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="UserData" uuid="10af5369-a4eb-4a20-86e7-7e2044527ec8">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     xb_user.`user_id` AS xb_user_user_id,
+     xb_user.`username` AS xb_user_username,
+     xb_user.`mobile` AS xb_user_mobile,
+     xb_user.`sex` AS xb_user_sex,
+     xb_user.`enabled` AS xb_user_enabled
+FROM
+     `xb_user` xb_user]]>
+		</queryString>
+		<field name="xb_user_user_id" class="java.lang.Integer"/>
+		<field name="xb_user_username" class="java.lang.String"/>
+		<field name="xb_user_mobile" class="java.lang.Integer"/>
+		<field name="xb_user_sex" class="java.lang.Integer"/>
+		<field name="xb_user_enabled" class="java.lang.Integer"/>
+		<group name="xb_user_user_id">
+			<groupExpression><![CDATA[$F{xb_user_user_id}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     xb_user.`user_id` AS xb_user_user_id,
+     xb_user.`username` AS xb_user_username,
+     xb_user.`mobile` AS xb_user_mobile,
+     xb_user.`sex` AS xb_user_sex,
+     xb_user.`enabled` AS xb_user_enabled
+FROM
+     `xb_user` xb_user]]>
+	</queryString>
+	<field name="xb_user_user_id" class="java.lang.Integer"/>
+	<field name="xb_user_username" class="java.lang.String"/>
+	<field name="xb_user_mobile" class="java.lang.Integer"/>
+	<field name="xb_user_sex" class="java.lang.Integer"/>
+	<field name="xb_user_enabled" class="java.lang.Integer"/>
+	<group name="xb_user_user_id">
+		<groupExpression><![CDATA[$F{xb_user_user_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="133" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="56" y="39" width="499" height="67" uuid="e039ebf2-564c-41eb-9196-6651c2ae7df2"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="UserData" uuid="b40e8840-4ba9-42c2-8d45-3ffff2400d8e">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="7dcde5e2-74a3-48eb-b4d0-fb295253cc5c">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="2e0e6fd5-35db-4a88-939c-f37acbfb31d3"/>
+								<text><![CDATA[xb_user_user_id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="dc02f451-5c7c-441c-a1e9-1015d7eeeaf6"/>
+								<textFieldExpression><![CDATA[$F{xb_user_user_id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="54c10ec6-94a2-4797-b705-7760c3ccb768">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="2158a1a6-f9b5-43f3-8937-03006c0f99c2"/>
+								<text><![CDATA[xb_user_username]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="b3362a74-9734-4ba7-a690-c564ac8d11ec"/>
+								<textFieldExpression><![CDATA[$F{xb_user_username}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="75d8df92-afd6-4bb3-a38a-706cbbf5aefe">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="fe966370-fba1-4d42-93f7-fb5c047dff90"/>
+								<text><![CDATA[xb_user_mobile]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="bced59fb-b001-463f-86ee-7fe4808d2227"/>
+								<textFieldExpression><![CDATA[$F{xb_user_mobile}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="19e16417-b44c-4a6e-82d3-48eea8294dc3">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="055af823-1472-47d4-a962-359552b72e32"/>
+								<text><![CDATA[xb_user_sex]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="9042db08-c728-4064-a600-ec4c1b137661"/>
+								<textFieldExpression><![CDATA[$F{xb_user_sex}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="269ff562-785c-46fa-8e2a-b1ed55d78aae">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="237d1507-cd78-4d6a-a33e-6c2d6c994dfe"/>
+								<text><![CDATA[xb_user_enabled]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8b36f4b3-fca0-4df2-9cae-0951f37b3d9a"/>
+								<textFieldExpression><![CDATA[$F{xb_user_enabled}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</pageHeader>
+</jasperReport>
