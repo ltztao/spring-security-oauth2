@@ -18,18 +18,6 @@ oauth2 返回类型
   "error_description": "Bad client credentials"  
 }
 
-Token验证失败返回  
-{  
-"error": "invalid_token",  
-"error_description": "Invalid access token: W3xqSWKLJpZuzyPARZGEhGP9DuPYIufw"  
-}
-
-Token过期返回  
-{  
-"error": "invalid_token",  
-"error_description": "Access token expired: W3xqSWKLJpZuzyPARZGEhGP9DuPYIufw"  
-}
-
 
 密码授权模式  
 
